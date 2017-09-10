@@ -1,0 +1,51 @@
+<!doctype html>
+<title>In Maintenance</title>
+
+<meta http-equiv="refresh" content="3">
+
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<script src="//dl.dropboxusercontent.com/u/3464356/ppcsamurai/maintenance_page/js/jquery.countdown.js"></script>
+
+<link href="//dl.dropboxusercontent.com/u/3464356/ppcsamurai/maintenance_page/css/media.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+$.ajax({
+  url: '/online_at.json',
+  success: function(data) {
+    if(eval(data) > new Date().getTime()) {
+      $(function(){
+        $(".digits").countdown({
+          image: "https://dl.dropboxusercontent.com/u/3464356/ppcsamurai/maintenance_page/img/digits.png",
+          format: "hh:mm:ss",
+          endTime: new Date(eval(data))
+        });
+        $("#cnt_1").after('<div style="float: left;vertical-align: bottom;padding-top: 57px;">Hrs</div>');
+        $("#cnt_3").after('<div style="float: left;vertical-align: bottom;padding-top: 57px;">Min</div>');
+        $("#cnt_5").after('<div style="float: left;vertical-align: bottom;padding-top: 57px;">Sec</div>');
+        $(".wrapper").before('<h2>We&rsquo;ll be back in about:</h2>');
+      });
+    }
+  }
+});
+</script>
+
+<article>
+  <h1><i class="fa fa-cogs"></i> In maintenance</h1>
+
+  <div class="wrapper">
+    <div class="cell">
+      <div id="holder">
+        <div class="digits"></div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <p>Sorry for the inconvenience but we&rsquo;re performing some maintenance at the moment. If you need to you can always <a href="http://www.ppcsamurai.com/contact-us/">contact us</a>, otherwise we&rsquo;ll be back online shortly!</p>
+    <p>&mdash; PPC Samurai</p>
+  </div>
+</article>

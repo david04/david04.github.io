@@ -1,0 +1,41 @@
+
+
+body { text-align: center; padding: 150px; }
+
+h1 { font-size: 50px; }
+body { font: 20px 'Open Sans', sans-serif; color: #fff; }
+article { display: block; text-align: left; width: 650px; margin: 0 auto; }
+a { color: #dc8100; text-decoration: none; }
+a:hover { color: #333; text-decoration: none; }
+
+html {
+  background: url(https://dl.dropboxusercontent.com/u/3464356/ppcsamurai/maintenance_page/background_square_blueblue.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.wrapper { display: table; }
+
+.cell {
+  display: table-cell;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#holder {
+  width: 603px;
+  height: 100px;
+  margin: auto;
+}
+
+.cntSeparator { display: none; }
+
+.digits {
+  display: inline-block;
+}
+
+.cntDigit#cnt_2 { margin-left: 7px; }
